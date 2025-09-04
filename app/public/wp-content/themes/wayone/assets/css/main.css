@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --max: 1100px;
 }
@@ -15,5 +16,11 @@ body {
 
 .section {
   padding: 64px 0;
+=======
+body {
+  background-color: #bebebe;
+  opacity: 1;
+  color: white;
+>>>>>>> 1e90130 (connection established)
 }
 /*# sourceMappingURL=main.css.map */

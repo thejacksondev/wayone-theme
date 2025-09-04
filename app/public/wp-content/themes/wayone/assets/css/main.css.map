@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss","main.css"],"names":[],"mappings":"AAAA;EACI,yBAAA;EACA,UAAA;EACA,YAAA;ACCJ","file":"main.css","sourcesContent":["body {\n    background-color: #bebebe;\n    opacity: 1;\n    color: white;\n}","body {\n  background-color: #bebebe;\n  opacity: 1;\n  color: white;\n}"]}

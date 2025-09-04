@@ -25,9 +25,24 @@
 
 !/app/public/wp-content/themes/wayone/**
 
-# --- Ignore other wp-content areas explicitly ---
-/app/public/wp-content/plugins/**
-/app/public/wp-content/uploads/**
+# Ignore everything
+/*
+
+# Allow meta/tools
+!/.gitignore
+!/README.md
+!/package.json
+!/package-lock.json
+!/gulpfile.js
+!/src/**
+
+# Unignore app and walk down the tree explicitly
+!/app/
+!/app/public/
+!/app/public/wp-content/
+!/app/public/wp-content/themes/
+!/app/public/wp-content/themes/wayone/
+!/app/public/wp-content/themes/wayone/**
 
 # --- Local/OS cruft ---
 /conf/**
