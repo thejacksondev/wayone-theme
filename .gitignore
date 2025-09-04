@@ -1,48 +1,39 @@
-# Ignore everything by default
-*
+# --- Ignore everything at repo root ---
+/*
 
-# Always keep
-!.gitignore
-!README.md
+# --- Keep repo/meta & tooling ---
+!/.gitignore
+!/README.md
+!/package.json
+!/package-lock.json
+!/gulpfile.js
+!/src/**
 
-# Keep build tooling at repo root
-!package.json
-!package-lock.json
-!gulpfile.js
+# --- Walk down into app/public/wp-content/themes/wayone ---
+!/app/
+#/ re-ignore everything under app then selectively open paths
+/app/*
 
-# Keep source files
-!src/**
+!/app/public/
+/app/public/*
 
-# Allow app folder
-!app/
-app/*
+!/app/public/wp-content/
+/app/public/wp-content/*
 
-# Allow public folder
-!app/public/
-app/public/*
+!/app/public/wp-content/themes/
+/app/public/wp-content/themes/*
 
-# Allow wp-content folder
-!app/public/wp-content/
-app/public/wp-content/*
+!/app/public/wp-content/themes/wayone/**
 
-# Allow themes folder
-!app/public/wp-content/themes/
-app/public/wp-content/themes/*
+# --- Ignore other wp-content areas explicitly ---
+/app/public/wp-content/plugins/**
+/app/public/wp-content/uploads/**
 
-# Keep the wayone theme (including compiled assets)
-!app/public/wp-content/themes/wayone/**
-
-# Ignore everything else in wp-content
-app/public/wp-content/plugins/**
-app/public/wp-content/uploads/**
-
-# Ignore Local config/logs
-conf/**
-logs/**
-
-# Node / OS cruft
-node_modules/
-npm-debug.log
-yarn-error.log
-.DS_Store
-Thumbs.db
+# --- Local/OS cruft ---
+/conf/**
+/logs/**
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+/.DS_Store
+/Thumbs.db

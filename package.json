@@ -1,0 +1,25 @@
+{
+  "name": "wayone-wp",
+  "version": "1.0.0",
+  "description": "Custom WordPress theme build setup for wayone",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp build",
+    "watch": "NODE_ENV=development gulp watch",
+    "clean": "gulp clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "del": "^8.0.0",
+    "esbuild": "^0.25.9",
+    "gulp": "^5.0.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.92.0"
+  }
+}
