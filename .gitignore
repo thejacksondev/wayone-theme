@@ -1,7 +1,7 @@
 # Ignore everything by default
 *
 
-# Allow gitignore itself
+# Always keep
 !.gitignore
 !README.md
 
@@ -9,6 +9,8 @@
 !package.json
 !package-lock.json
 !gulpfile.js
+
+# Keep source files
 !src/**
 
 # Allow app folder
@@ -27,10 +29,10 @@ app/public/wp-content/*
 !app/public/wp-content/themes/
 app/public/wp-content/themes/*
 
-# Finally, keep ONLY the wayone theme
+# Keep the wayone theme (including compiled assets)
 !app/public/wp-content/themes/wayone/**
 
-# Ignore everything else in wp-content (plugins, uploads, etc.)
+# Ignore everything else in wp-content
 app/public/wp-content/plugins/**
 app/public/wp-content/uploads/**
 
@@ -38,11 +40,9 @@ app/public/wp-content/uploads/**
 conf/**
 logs/**
 
-# Node stuff
+# Node / OS cruft
 node_modules/
 npm-debug.log
 yarn-error.log
-
-# OS cruft
 .DS_Store
 Thumbs.db
