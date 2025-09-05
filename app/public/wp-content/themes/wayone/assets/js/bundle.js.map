@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": ["../../src/js/index.js"],
-  "sourcesContent": ["console.log(\"here\");\n"],
-  "mappings": ";;AAAA,UAAQ,IAAI,MAAM;",
+  "sources": ["../../../../../../../src/js/index.js"],
+  "sourcesContent": ["document.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"wayone JS ready\");\n});\n"],
+  "mappings": ";;AAAA,WAAS,iBAAiB,oBAAoB,MAAM;AAClD,YAAQ,IAAI,iBAAiB;AAAA,EAC/B,CAAC;",
   "names": []
 }
