@@ -1,23 +1,50 @@
 <?php
-// Include the Bootstrap Navwalker class
-require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+require_once __DIR__ . '/class-wp-bootstrap-navwalker.php';
+
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker()
+{
+  require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action('after_setup_theme', 'register_navwalker');
+
+register_nav_menus(array(
+  'primary' => __('Primary Menu', 'wayone'),
+));
+
+
+
+
+function wayone_enqueue_scripts()
+{
+  // Enqueue jQuery (WordPress comes with jQuery)
+  wp_enqueue_script('jquery');
+
+  // Enqueue Bootstrap JS (depends on jQuery)
+  wp_enqueue_script(
+    'bootstrap-js',
+    'https://cdn.jsdelivr.net/npm/bootstrap3@3.3.5/dist/js/bootstrap.min.js',
+    array('jquery'),
+    null,
+    true // load in footer
+  );
+}
+add_action('wp_enqueue_scripts', 'wayone_enqueue_scripts');
+
 
 add_action('wp_enqueue_scripts', function () {
   $ver = wp_get_theme()->get('Version');
-  wp_enqueue_style('wayone', get_template_directory_uri() . '/assets/css/main.css', [], $ver);
+
+  // Enqueue Bootstrap CSS first so it can be overridden
+  wp_enqueue_style(
+    'bootstrap-css',
+    'https://cdn.jsdelivr.net/npm/bootstrap3@3.3.5/dist/css/bootstrap.min.css'
+  );
+
+  // Enqueue theme CSS after Bootstrap to override it
+  wp_enqueue_style('wayone', get_template_directory_uri() . '/assets/css/main.css', ['bootstrap-css'], $ver);
   wp_enqueue_script('wayone', get_template_directory_uri() . '/assets/js/bundle.js', [], $ver, true);
-});
-
-add_action('after_setup_theme', function () {
-  add_theme_support('title-tag');
-  add_theme_support('html5', ['style','script','search-form','gallery','caption']);
-  add_theme_support('menus');
-});
-
-// Register menu locations
-add_action('init', function () {
-  register_nav_menus(array(
-    'primary' => __('Primary Menu', 'wayone'),
-    'footer'  => __('Footer Menu', 'wayone'),
-  ));
 });
