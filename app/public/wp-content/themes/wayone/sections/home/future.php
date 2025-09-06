@@ -25,12 +25,12 @@ if (!function_exists('future_items')) {
 }
 ?>
 
-<section class="future">
+<section id="2-section" class="future">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <div class="future-header">
-                    <h3>Meet Wayone</h3>
+                    <h3 class="bg-red">Meet Wayone</h3>
                     <h2>The Future Of Ad Creatives</h2>
                     <p>Automate your entire ad creative workflow with Wayone</p>
                 </div>

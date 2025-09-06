@@ -1,12 +1,12 @@
-<section class="hero">
+<section id="1-section" class="hero">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="text-box">
           <h1>
-            <span>One Design.</span>
-            <span>Every Ad Format.</span>
-            <span>Done.</span>
+            <span class="bg-yellow">One Design.</span>
+            <span class="bg-green">Every Ad Format.</span>
+            <span class="bg-red">Done.</span>
           </h1>
           <p>Upload one design, and instantly create all your ads for Google, Meta, LinkedIn, and beyond.</p>
           <div class="actions">

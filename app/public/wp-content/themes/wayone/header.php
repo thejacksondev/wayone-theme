@@ -9,7 +9,6 @@
 
 <body <?php body_class('wayone'); ?>>
   <header class="site-header" role="banner">
-    <?php get_template_part('template-part/mobile-nav') ?>
-    <?php get_template_part('template-parts/nav'); ?>
+    <?php get_template_part('sections/global/nav'); ?>
 
   </header>

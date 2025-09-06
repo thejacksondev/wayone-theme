@@ -1,9 +1,12 @@
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   color: #000000;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 32px;
+  position: relative;
+  font-size: 1rem;
 }
 
 .container {
@@ -13,12 +16,17 @@ body {
   padding: 0 1.5rem;
 }
 
-h2 {
-  font-family: 50px;
+h1,
+h2,
+h3 {
   font-weight: 700;
-  text-align: center;
-  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 3.375rem;
   line-height: 60px;
+  letter-spacing: 0;
+  text-align: center;
 }
 @media (max-width: 768px) {
   h2 {
@@ -27,9 +35,27 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 1rem;
+  line-height: 38px;
+  letter-spacing: 0;
+}
+
 img {
   width: 100%;
   height: auto;
+}
+
+.bg-green {
+  background-color: #CCF7DE;
+}
+
+.bg-red {
+  background-color: #FFD9ED;
+}
+
+.bg-yellow {
+  background-color: #F7F2CC;
 }
 
 @font-face {
@@ -81,6 +107,57 @@ img {
   font-style: normal;
   font-display: swap;
 }
+a.button,
+.nav__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 62px;
+  width: 100%;
+  max-width: 207px;
+  min-width: 180px;
+  padding: 0 1.5rem;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+a.button span,
+.nav__cta span {
+  position: relative;
+  z-index: 1;
+}
+a.button:after,
+.nav__cta:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #CCF7DE;
+  z-index: 0;
+  transform: translateX(-100%);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+a.button:hover:after,
+.nav__cta:hover:after {
+  transform: translateX(0);
+}
+a.button:hover span,
+.nav__cta:hover span {
+  color: #000000;
+}
+a.button:active,
+.nav__cta:active {
+  transform: translateY(0);
+}
+
 header {
   z-index: 1000;
   position: absolute;
@@ -378,57 +455,6 @@ header {
     gap: 1rem;
   }
 }
-a.button,
-.nav__cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 62px;
-  width: 100%;
-  max-width: 207px;
-  min-width: 180px;
-  padding: 0 1.5rem;
-  background-color: #000000;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 10px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0;
-}
-a.button span,
-.nav__cta span {
-  position: relative;
-  z-index: 1;
-}
-a.button:after,
-.nav__cta:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #CCF7DE;
-  z-index: 0;
-  transform: translateX(-100%);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-a.button:hover:after,
-.nav__cta:hover:after {
-  transform: translateX(0);
-}
-a.button:hover span,
-.nav__cta:hover span {
-  color: #000000;
-}
-a.button:active,
-.nav__cta:active {
-  transform: translateY(0);
-}
-
 .hero {
   background: transparent linear-gradient(180deg, #FEF0EA 0%, #FFFDF7 54%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   height: 1079px;
@@ -451,7 +477,7 @@ a.button:active,
   }
 }
 .hero .text-box h1 {
-  font-size: 54px;
+  font-size: 3.375rem;
   letter-spacing: 0px;
   line-height: 109px;
   font-weight: 700;
@@ -477,14 +503,7 @@ a.button:active,
   width: fit-content;
   padding: 2px;
 }
-.hero .text-box h1 span:nth-of-type(1) {
-  background-color: #F7F2CC;
-}
-.hero .text-box h1 span:nth-of-type(2) {
-  background-color: #CCF7DE;
-}
 .hero .text-box h1 span:nth-of-type(3) {
-  background-color: #FFD9ED;
   margin-bottom: 57px;
 }
 @media (max-width: 992px) {
@@ -494,11 +513,14 @@ a.button:active,
 }
 .hero .text-box p {
   margin-bottom: 57px;
+  font-size: 1.375rem;
+  line-height: 32px;
+  max-width: 416px;
 }
 @media (max-width: 992px) {
   .hero .text-box p {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
   }
 }
 .hero .image-box {
@@ -540,7 +562,6 @@ a.button:active,
   line-height: normal;
   letter-spacing: 0;
   max-width: 167px;
-  background-color: #FFD9ED;
   padding: 2px;
   margin: 0 auto 50px;
   font-weight: 700;
@@ -564,27 +585,5 @@ a.button:active,
 .future-item p strong {
   font-size: 18px;
   margin-bottom: 19px;
-}
-
-:root {
-  --max: 1920px;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  background-color: #ffffff;
-  color: #333333;
-  position: relative;
-}
-
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.section {
-  padding: 1.5rem 0;
 }
 /*# sourceMappingURL=main.css.map */
