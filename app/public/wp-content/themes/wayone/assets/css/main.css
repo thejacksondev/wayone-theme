@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
 }
@@ -7,6 +13,9 @@ body {
   color: #000000;
   position: relative;
   font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -27,6 +36,7 @@ h2 {
   line-height: 60px;
   letter-spacing: 0;
   text-align: center;
+  margin: 0;
 }
 @media (max-width: 768px) {
   h2 {
@@ -545,8 +555,13 @@ header {
 }
 
 .future {
-  padding: 100px 0;
+  padding: 100px 0 150px;
   position: relative;
+}
+@media (max-width: 768px) {
+  .future {
+    padding: 120px 0;
+  }
 }
 .future-header {
   margin-bottom: 91px;
@@ -556,6 +571,9 @@ header {
   .future-header {
     margin-bottom: 65px;
   }
+}
+.future-header h2 {
+  margin-bottom: 34px;
 }
 .future-header h3 {
   font-size: 16px;
@@ -583,6 +601,80 @@ header {
   font-size: 16px;
 }
 .future-item p strong {
+  font-size: 18px;
+  margin-bottom: 19px;
+}
+
+.ease {
+  padding: 100px 0;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .ease {
+    padding: 0 0 65px;
+  }
+}
+.ease-header {
+  margin-bottom: 91px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .ease-header {
+    margin-bottom: 65px;
+  }
+}
+.ease-header h3 {
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+  max-width: 167px;
+  padding: 2px;
+  margin: 0 auto 50px;
+  font-weight: 700;
+}
+.ease-header h2 {
+  margin-bottom: 45px;
+}
+.ease-item {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .ease-item {
+    max-width: none;
+    margin: 0 auto 30px;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.ease-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 19px;
+  max-width: 309px;
+}
+@media (max-width: 768px) {
+  .ease-item__content {
+    max-width: none;
+  }
+}
+.ease-item__image {
+  margin-bottom: 34px;
+}
+@media (max-width: 768px) {
+  .ease-item__image {
+    margin-bottom: 0;
+  }
+}
+.ease-item p {
+  font-size: 16px;
+}
+.ease-item p strong {
   font-size: 18px;
   margin-bottom: 19px;
 }
