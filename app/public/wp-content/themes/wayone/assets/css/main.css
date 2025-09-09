@@ -32,7 +32,7 @@ h3 {
 }
 
 h2 {
-  font-size: 3.375rem;
+  font-size: 3.125rem;
   line-height: 60px;
   letter-spacing: 0;
   text-align: center;
@@ -562,7 +562,7 @@ header {
 }
 
 .future {
-  padding: 100px 0 150px;
+  padding: 114px 0 150px;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -580,7 +580,7 @@ header {
   }
 }
 .future-header h2 {
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 .future-header h3 {
   font-size: 16px;
@@ -588,27 +588,85 @@ header {
   letter-spacing: 0;
   max-width: 167px;
   padding: 2px;
-  margin: 0 auto 50px;
+  margin: 0 auto;
+  margin-bottom: 49px;
   font-weight: 700;
+}
+.future-header p {
+  font-size: 1.375rem;
+  margin-bottom: 15px;
+}
+@media (max-width: 992px) {
+  .future-header p {
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+}
+.future-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 1634px;
+}
+@media (max-width: 1600px) {
+  .future-items {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .future-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .future-items {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 .future-item {
   text-align: left;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .future-item {
     max-width: 300px;
-    margin: 0 auto 30px;
     text-align: center;
+    margin: 0 auto 20px;
   }
 }
 .future-item__image {
-  margin-bottom: 34px;
+  margin-bottom: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 398px;
+  min-width: 398px;
+  aspect-ratio: 1/1;
+  background: #FBFBFB;
+  border-radius: 10px;
+}
+@media (max-width: 1600px) {
+  .future-item__image {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+  }
+}
+.future-item__image img,
+.future-item__image svg {
+  width: 100%;
+  height: 100%;
+  max-width: 230px;
 }
 .future-item p {
-  font-size: 16px;
+  font-size: 1rem;
+  margin: 0 0 8px;
+  line-height: 30px;
 }
 .future-item p strong {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 19px;
 }
 
