@@ -21,7 +21,7 @@ if (!function_exists('ease_items')) {
 }
 ?>
 
-<section id="2-section" class="ease">
+<section id="3-section" class="ease">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
