@@ -6,7 +6,7 @@ if (!function_exists('pricing_items')) {
         return [
             [
                 'title' => 'Starter',
-                'title_class' => 'bg-green',
+                'title_class' => 'bg-red',
                 'description' => 'Perfect for small businesses',
                 'price' => '$19<span>/month</span>',
                 'features' => ['10 Designs/Month', 'All Plataform Formats', 'Basic Templates']
@@ -45,25 +45,23 @@ if (!function_exists('pricing_items')) {
                 </div>
             </div>
         </div>
-        <div class="row pricing-items">
-            <?php foreach (pricing_items() as $item) : ?>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pricing-item">
-                        <h3>
-                            <span class="<?php echo $item['title_class']; ?>">
-                                <?php echo $item['title']; ?>
-                            </span>
-                        </h3>
-                        <p class="pricing-item__description"><?php echo $item['description']; ?></p>
-                        <p class="pricing-item__price"><?php echo $item['price']; ?></p>
-                        <ul class="pricing-item__list">
-                            <?php foreach ($item['features'] as $feature) : ?>
-                                <li><?php echo $feature; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+    </div>
+    <div class="pricing-items">
+        <?php foreach (pricing_items() as $item) : ?>
+            <div class="pricing-item">
+                <h3>
+                    <span class="<?php echo $item['title_class']; ?>">
+                        <?php echo $item['title']; ?>
+                    </span>
+                </h3>
+                <p class="pricing-item__description"><?php echo $item['description']; ?></p>
+                <p class="pricing-item__price"><?php echo $item['price']; ?></p>
+                <ul class="pricing-item__list">
+                    <?php foreach ($item['features'] as $feature) : ?>
+                        <li><?php echo $feature; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
