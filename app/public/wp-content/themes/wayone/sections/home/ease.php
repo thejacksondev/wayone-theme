@@ -7,14 +7,17 @@ if (!function_exists('ease_items')) {
             [
                 'title' => '1. Upload Your Design',
                 'description' => 'PNG, JPG, or export from Canva/Figma — no technical skills needed.',
+                'svg' => 'svg-1',
             ],
             [
                 'title' => '2. Choose Your Platforms',
                 'description' => 'Select where you want to run ads. We’ll handle the specs and sizing.',
+                'svg' => 'svg-2',
             ],
             [
                 'title' => '3. Download Your Full Ad Set',
                 'description' => 'All creatives exported and ready to upload. Editable if needed.',
+                'svg' => 'svg-3',
             ],
         ];
     }
@@ -32,20 +35,19 @@ if (!function_exists('ease_items')) {
                 </div>
             </div>
         </div>
-        <div class="row">
-            <?php foreach (ease_items() as $item) : ?>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="ease-item">
-                        <div class="ease-item__image">
-                            <img src="https://placehold.co/43x43" alt="Placeholder image" class="img-responsive">
-                        </div>
-                        <div class="ease-item__content">
-                            <p><strong><?php echo $item['title']; ?></strong></p>
-                            <p><?php echo $item['description']; ?></p>
-                        </div>
-                    </div>
+    </div>
+
+    <div class="ease-grid">
+        <?php foreach (ease_items() as $item) : ?>
+            <div class="ease-grid__item">
+                <div class="ease-grid__item__image">
+                    <?php get_template_part('assets/svg/ease/' . $item['svg']); ?>
                 </div>
-            <?php endforeach; ?>
-        </div>
+                <div class="ease-grid__item__content">
+                    <p><strong><?php echo $item['title']; ?></strong></p>
+                    <p><?php echo $item['description']; ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
