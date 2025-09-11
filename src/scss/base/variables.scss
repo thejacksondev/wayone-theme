@@ -1,0 +1,87 @@
+// Variables - Centralized Theme Configuration
+// =========================================
+
+// Colors
+// ======
+
+// Primary Colors
+$color-1: #CCF7DE;
+$color-1-hover: #81d6a4;
+$color-2: #FFD9ED;
+$color-3: #F7F2CC;
+$color-4: #FFFFFF;
+$color-5: #000000;
+$color-6: #FBFBFB;
+$color-7: #FCDDC6;
+// Semantic Colors
+
+$bg-gradient: transparent linear-gradient(180deg, #FEF0EA 0%, #FFFDF7 54%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+
+// Background Colors
+$body-bg: #ffffff;
+$nav-bg: #ffffff;
+$footer-bg: #f8f9fa;
+
+// Text Colors
+$text-primary: #333333;
+$text-secondary: #6c757d;
+$text-muted: #adb5bd;
+$text-light: #ffffff;
+
+// Link Colors
+
+// Border Colors
+$border-color: #e9ecef;
+$border-light: #f8f9fa;
+$border-dark: #dee2e6;
+
+// Shadow Colors
+$shadow-sm: rgba(0, 0, 0, 0.075);
+$shadow: rgba(0, 0, 0, 0.1);
+$shadow-lg: rgba(0, 0, 0, 0.15);
+
+// Typography
+// ==========
+
+// Font Families
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+// Font Sizes
+$font-size-12: 0.75rem; // 12px
+$font-size-14: 0.875rem; // 14px
+$font-size-16: 1rem; // 16px
+$font-size-18: 1.125rem; // 18px
+$font-size-20: 1.25rem; // 20px
+$font-size-22: 1.375rem; // 22px
+$font-size-24: 1.5rem; // 24px
+$font-size-30: 1.875rem; // 30px
+$font-size-36: 2.25rem; // 36px
+$font-size-48: 3rem; // 48px
+$font-size-50: 3.125rem; // 50px
+$font-size-54: 3.375rem; // 54px
+$font-size-68: 4.25rem; // 68px
+
+
+// Font Weights
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+$font-weight-800: 800;
+$font-weight-900: 900;
+// Container
+$large-container-max-width: 1909px;
+$small-container-max-width: 1510px;
+
+// breakpoints
+$bp-phone: 576px;
+$bp-tablet: 768px;
+$bp-laptop: 992px;
+$bp-desktop: 1200px;
+$bp-desktop-large: 1400px;
+$bp-desktop-large-2: 1600px;
+$bp-desktop-large-3: 1920px;
+
+// shadows 
+$shadow-box: 0px 3px 6px #00000014;

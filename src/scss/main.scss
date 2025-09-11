@@ -1,0 +1,16 @@
+// base styles
+@import './base/variables';
+@import './base/global';
+@import './base/font';
+
+// components
+@import './components/buttons';
+
+// global sections
+@import './sections/global/nav.scss';
+
+// home sections
+@import './sections/home/hero.scss';
+@import './sections/home/future.scss';
+@import './sections/home/ease.scss';
+@import './sections/home/pricing.scss';

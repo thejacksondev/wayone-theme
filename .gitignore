@@ -1,50 +1,21 @@
 # --- Ignore everything at repo root ---
 /*
 
-# --- Keep repo/meta & tooling ---
+# --- Allow meta/tooling files ---
 !/.gitignore
 !/README.md
 !/package.json
 !/package-lock.json
 !/gulpfile.js
+
+# --- Unignore src folder ---
+!/src/
 !/src/**
 
 # --- Walk down into app/public/wp-content/themes/wayone ---
-!/app/
-#/ re-ignore everything under app then selectively open paths
-/app/*
-
-!/app/public/
-/app/public/*
-
-!/app/public/wp-content/
-/app/public/wp-content/*
-
-!/app/public/wp-content/themes/
-/app/public/wp-content/themes/*
-
 !/app/public/wp-content/themes/wayone/**
 
-# Ignore everything
-/*
-
-# Allow meta/tools
-!/.gitignore
-!/README.md
-!/package.json
-!/package-lock.json
-!/gulpfile.js
-!/src/**
-
-# Unignore app and walk down the tree explicitly
-!/app/
-!/app/public/
-!/app/public/wp-content/
-!/app/public/wp-content/themes/
-!/app/public/wp-content/themes/wayone/
-!/app/public/wp-content/themes/wayone/**
-
-# --- Local/OS cruft ---
+# --- Local/OS/system cruft ---
 /conf/**
 /logs/**
 /node_modules/

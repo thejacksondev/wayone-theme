@@ -1,0 +1,392 @@
+// Navigation Component - BEM Methodology
+// ======================================
+
+
+
+
+header {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.nav {
+    // Block: .nav
+    background-color: transparent;
+
+    padding: 1.3rem 0 1em;
+    position: relative;
+    z-index: 1000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+
+    &__container {
+        min-height: 82px;
+    }
+
+    .container {
+        max-width: $large-container-max-width;
+    }
+
+
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    // Element: .nav__brand
+    &__brand {
+        flex: 0 0 auto;
+    }
+
+    // Element: .nav__content
+    &__content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    // Element: .nav__toggle
+    &__toggle {
+        display: none;
+        background: none;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #f8f9fa;
+        }
+
+        &:focus {
+            outline: 2px solid $color-1-hover;
+            outline-offset: 2px;
+        }
+
+        // Modifier: .nav__toggle--active
+        &--active {
+            .nav__toggle-icon {
+                background-color: transparent;
+
+                &::before {
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    // Element: .nav__toggle-icon
+    &__toggle-icon {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #333;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
+        &::before {
+            top: -6px;
+        }
+
+        &::after {
+            top: 6px;
+        }
+    }
+
+    // Element: .nav__menu
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        width: 100%;
+        justify-content: flex-end;
+
+        @media (max-width:$bp-desktop) {
+            gap: 10px;
+        }
+
+        @media (max-width:$bp-laptop) {
+            display: none;
+        }
+
+        // Bootstrap Navigation Classes (keeping for compatibility)
+        .navbar-collapse {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 58px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            @media (max-width:$bp-desktop) {
+                gap: 30px;
+            }
+
+            .nav-item {
+                position: relative;
+
+                .nav-link {
+                    color: #333;
+                    font-size: 16px;
+                    text-decoration: none;
+                    font-weight: 500;
+                    padding: 0.5rem 0;
+                    transition: color 0.3s ease;
+                    position: relative;
+
+                    &:hover {
+                        color: $color-1-hover;
+                    }
+
+                    // Active state
+                    &.active {
+                        color: $color-1-hover;
+                        font-weight: 600;
+                    }
+
+                    // Dropdown toggle
+                    &.dropdown-toggle {
+                        &::after {
+                            content: '';
+                            display: inline-block;
+                            margin-left: 0.5rem;
+                            vertical-align: middle;
+                            border-top: 4px solid;
+                            border-right: 4px solid transparent;
+                            border-left: 4px solid transparent;
+                            transition: transform 0.3s ease;
+                        }
+
+                        &[aria-expanded="true"]::after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                // Dropdown Menu
+                .dropdown-menu {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #fff;
+                    border: 1px solid #e9ecef;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    min-width: 200px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-10px);
+                    transition: all 0.3s ease;
+                    z-index: 1000;
+
+                    .dropdown-item {
+                        display: block;
+                        padding: 0.75rem 1rem;
+                        color: #333;
+                        text-decoration: none;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #f8f9fa;
+                            color: $color-1-hover;
+                        }
+                    }
+
+                    .dropdown-divider {
+                        height: 1px;
+                        background-color: #e9ecef;
+                        margin: 0.5rem 0;
+                    }
+
+                    .dropdown-header {
+                        padding: 0.5rem 1rem;
+                        font-size: 1rem;
+                        color: #6c757d;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.05em;
+                    }
+                }
+
+                // Show dropdown on hover
+                &:hover .dropdown-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+
+
+    // Modifier: .nav--mobile
+    &--mobile {
+        .nav__toggle {
+            display: block;
+        }
+
+        .nav__menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            border-top: 1px solid #e9ecef;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            align-items: stretch;
+            padding: 1rem;
+            gap: 1rem;
+
+            .navbar-collapse {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+
+                &.collapse:not(.show) {
+                    display: none;
+                }
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+
+                .nav-item {
+                    .nav-link {
+                        padding: 1rem;
+                        border-bottom: 1px solid #f8f9fa;
+                        display: block;
+                        width: 100%;
+
+                        &.dropdown-toggle::after {
+                            float: right;
+                            margin-top: 0.25rem;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        position: static;
+                        opacity: 1;
+                        visibility: visible;
+                        transform: none;
+                        box-shadow: none;
+                        border: none;
+                        background-color: #f8f9fa;
+                        margin-top: 0;
+                        border-radius: 0;
+
+                        .dropdown-item {
+                            padding: 0.75rem 2rem;
+                            border-bottom: 1px solid #e9ecef;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav__cta {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+// Logo Component - BEM
+// ====================
+
+.logo {
+
+    // Block: .logo
+    &__link {
+        font-size: 30px;
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        text-transform: capitalize;
+
+        &:hover {
+            color: $color-1-hover;
+        }
+    }
+
+    // Modifier: .logo--small
+    &--small {
+        .logo__link {
+            font-size: 1.25rem;
+        }
+    }
+
+    // Modifier: .logo--large
+    &--large {
+        .logo__link {
+            font-size: 2rem;
+        }
+    }
+}
+
+// Responsive Breakpoints
+// ======================
+
+@media (max-width: 768px) {
+    .nav {
+        &--mobile {
+            .nav__toggle {
+                display: block;
+            }
+
+            .nav__menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                border-top: 1px solid #e9ecef;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem;
+                gap: 1rem;
+            }
+        }
+    }
+}
