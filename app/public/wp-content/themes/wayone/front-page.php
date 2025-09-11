@@ -4,5 +4,6 @@
   <?php get_template_part('sections/home/future'); ?>
   <?php get_template_part('sections/home/ease'); ?>
   <?php get_template_part('sections/home/pricing'); ?>
+  <?php get_template_part('sections/home/reviews'); ?>
 </main>
 <?php get_footer(); ?>

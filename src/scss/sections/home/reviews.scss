@@ -1,0 +1,107 @@
+.reviews {
+    padding: 43px 0;
+    position: relative;
+
+
+    @media (max-width: $bp-tablet) {
+        padding: 0 0 65px;
+    }
+
+    &-header {
+        margin-bottom: 91px;
+        text-align: center;
+
+        @media (max-width: $bp-tablet) {
+            margin-bottom: 65px;
+        }
+
+        h3 {
+            font-size: $font-size-16;
+            line-height: normal;
+            letter-spacing: 0;
+            max-width: 167px;
+            padding: 2px;
+            margin: 0 auto 46px;
+            font-weight: 700;
+            width: fit-content;
+            min-width: 221px;
+        }
+
+        h2 {
+            margin: 0 auto 40px;
+            max-width: 1030px;
+        }
+
+        p {
+            font-size: $font-size-22;
+            line-height: 36px;
+            max-width: 830px;
+            margin: 0 auto;
+        }
+
+    }
+
+    &-grid {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        max-width: 1322px;
+        margin: 0 auto;
+        gap: 65px;
+
+        @media (max-width: $bp-desktop-large-2) {
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        @media (max-width: $bp-laptop) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        .item {
+            border-radius: 21px;
+            box-shadow: $shadow-box;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            min-height: 307px;
+            padding: 40px;
+
+
+            @media (max-width: $bp-laptop) {
+                min-height: auto;
+                height: auto;
+            }
+
+
+
+            h3,
+            p {
+                margin: 0;
+            }
+
+            p {
+                font-size: $font-size-16;
+                line-height: 28px;
+                margin: 0;
+            }
+
+            &-author {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+            }
+
+            img {
+                width: 53px;
+                height: 53px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+
+}
