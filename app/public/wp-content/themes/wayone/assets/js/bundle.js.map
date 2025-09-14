@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../../../../../../../src/js/index.js"],
-  "sourcesContent": ["document.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"wayone JS ready\");\n});\n"],
-  "mappings": ";;AAAA,WAAS,iBAAiB,oBAAoB,MAAM;AAClD,YAAQ,IAAI,iBAAiB;AAAA,EAC/B,CAAC;",
+  "sourcesContent": ["class FaqAccordion extends HTMLElement {\n  constructor() {\n    super();\n    this.accordion = this.querySelector(\"ul\");\n    this.accordionItems = this.querySelectorAll(\"li\");\n  }\n\n  connectedCallback() {\n    console.log(this);\n    this.accordionItems.forEach(item => {\n      item.addEventListener(\"click\", () => {\n        item.classList.toggle(\"open\");\n      });\n    });\n  }\n}\n\ncustomElements.define(\"faq-accordion\", FaqAccordion);\n"],
+  "mappings": ";;AAAA,MAAM,eAAN,cAA2B,YAAY;AAAA,IACrC,cAAc;AACZ,YAAM;AACN,WAAK,YAAY,KAAK,cAAc,IAAI;AACxC,WAAK,iBAAiB,KAAK,iBAAiB,IAAI;AAAA,IAClD;AAAA,IAEA,oBAAoB;AAClB,cAAQ,IAAI,IAAI;AAChB,WAAK,eAAe,QAAQ,UAAQ;AAClC,aAAK,iBAAiB,SAAS,MAAM;AACnC,eAAK,UAAU,OAAO,MAAM;AAAA,QAC9B,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACF;AAEA,iBAAe,OAAO,iBAAiB,YAAY;",
   "names": []
 }
