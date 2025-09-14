@@ -528,20 +528,23 @@ a.button:active,
   align-items: stretch;
   max-width: 1640px;
   margin: 0 auto;
+  gap: 15px;
 }
 @media (max-width: 768px) {
   .pricing-items {
     flex-direction: column;
+    padding: 15px;
   }
 }
 .pricing-item {
   display: flex;
   flex-direction: column;
   gap: 0;
-  height: 100%;
+  height: auto;
   width: 100%;
   background: #FBFBFB 0% 0% no-repeat padding-box;
   padding: 39px 0px 80px 56px;
+  border-radius: 10px;
 }
 @media (max-width: 1200px) {
   .pricing-item {
@@ -571,6 +574,12 @@ a.button:active,
   font-weight: 700;
   line-height: 68px;
   margin-bottom: 22px;
+}
+@media (max-width: 992px) {
+  .pricing-item__price {
+    font-size: 3.125rem;
+    line-height: normal;
+  }
 }
 .pricing-item__price span {
   font-size: 1.125rem;
@@ -772,6 +781,11 @@ a.button:active,
 .faq .faq-list__item {
   padding: 27px 33px 29px 51px;
 }
+@media (max-width: 768px) {
+  .faq .faq-list__item {
+    padding: 20px;
+  }
+}
 .faq .faq-list__item p {
   margin: 0;
 }
@@ -817,6 +831,11 @@ a.button:active,
 }
 .faq .faq-list__item.open .faq-list__header {
   margin-bottom: 18px;
+}
+@media (max-width: 768px) {
+  .faq .faq-list__item.open .faq-list__header {
+    flex-wrap: wrap;
+  }
 }
 .faq .faq-list__header {
   font-size: 1.125rem;

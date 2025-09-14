@@ -63,6 +63,10 @@
         &__item {
             padding: 27px 33px 29px 51px;
 
+            @media (max-width: $bp-tablet) {
+                padding: 20px;
+            }
+
             p {
                 margin: 0;
             }
@@ -119,6 +123,10 @@
 
                 .faq-list__header {
                     margin-bottom: 18px;
+
+                    @media (max-width: $bp-tablet) {
+                        flex-wrap: wrap;
+                    }
                 }
 
 
