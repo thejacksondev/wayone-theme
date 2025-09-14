@@ -2,12 +2,9 @@
 @import './base/variables';
 @import './base/global';
 @import './base/font';
-
 // components
 @import './components/buttons';
 
-// global sections
-@import './sections/global/nav.scss';
 
 // home sections
 @import './sections/home/hero.scss';
@@ -16,3 +13,7 @@
 @import './sections/home/pricing.scss';
 @import './sections/home/reviews.scss';
 @import './sections/home/faq.scss';
+
+// global sections
+@import './sections/global/nav.scss';
+@import './sections/global/footer.scss';
