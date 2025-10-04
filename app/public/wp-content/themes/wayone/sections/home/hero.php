@@ -18,7 +18,6 @@
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="image-box">
-          <!-- <img src="https://placehold.co/319x477" alt="Placeholder image" class="img-responsive"> -->
           <?php get_template_part('assets/svg/hero/svg-1'); ?>
         </div>
       </div>
