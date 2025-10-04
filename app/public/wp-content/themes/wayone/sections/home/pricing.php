@@ -34,7 +34,7 @@ if (!function_exists('pricing_items')) {
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="pricing-header">
+                <div class="pricing-header" data-aos="fade-down">
                     <h3 class="bg-yellow">Pricing</h3>
                     <h2> Explore Plans</h2>
                     <ul class="pricing-header__list">
@@ -47,8 +47,8 @@ if (!function_exists('pricing_items')) {
         </div>
     </div>
     <div class="pricing-items">
-        <?php foreach (pricing_items() as $item) : ?>
-            <div class="pricing-item">
+        <?php foreach (pricing_items() as $index => $item) : ?>
+            <div class="pricing-item" data-aos="fade-up" data-aos-delay="<?php echo $index * 200; ?>">
                 <h3>
                     <span class="<?php echo $item['title_class']; ?>">
                         <?php echo $item['title']; ?>

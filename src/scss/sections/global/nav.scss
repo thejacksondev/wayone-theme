@@ -1,11 +1,5 @@
-// Navigation Component - BEM Methodology
-// ======================================
-
-
-
-
 header {
-    z-index: 1000;
+    z-index: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -17,15 +11,23 @@ header {
 .nav {
     // Block: .nav
     background-color: transparent;
-
     padding: 1.3rem 0 1em;
     position: relative;
-    z-index: 1000;
+    z-index: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+
+    &--mobile {
+        padding: 0;
+        z-index: 1000;
+    }
 
 
     &__container {
         min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .container {
@@ -64,6 +66,12 @@ header {
         padding: 0.5rem;
         cursor: pointer;
         transition: all 0.3s ease;
+        margin: 0 0 0 auto;
+        padding: 15px;
+
+        @media (max-width: $bp-laptop) {
+            display: block;
+        }
 
         &:hover {
             background-color: #f8f9fa;
@@ -100,6 +108,7 @@ header {
         background-color: #333;
         position: relative;
         transition: all 0.3s ease;
+        cursor: pointer;
 
         &::before,
         &::after {
@@ -108,6 +117,7 @@ header {
             width: 100%;
             height: 2px;
             background-color: #333;
+            left: 0;
             transition: all 0.3s ease;
         }
 
@@ -132,8 +142,18 @@ header {
             gap: 10px;
         }
 
-        @media (max-width:$bp-laptop) {
+        &--mobile {
             display: none;
+
+            @media (max-width:$bp-laptop) {
+                display: flex;
+            }
+        }
+
+        &--desktop {
+            @media (max-width:$bp-laptop) {
+                display: none;
+            }
         }
 
         // Bootstrap Navigation Classes (keeping for compatibility)
@@ -258,10 +278,51 @@ header {
             display: block;
         }
 
+        .nav__toggle-close {
+            position: absolute;
+            top: 30px;
+            left: 210px;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #333;
+                transition: transform 0.3s ease;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+
+                &::before,
+                &::after {
+                    background-color: $color-1-hover;
+                }
+            }
+        }
+
         .nav__menu {
             position: absolute;
             top: 100%;
-            left: 0;
+            left: unset;
             right: 0;
             background-color: #fff;
             border-top: 1px solid #e9ecef;
@@ -270,18 +331,30 @@ header {
             align-items: stretch;
             padding: 1rem;
             gap: 1rem;
+            transition: all 0.3s ease;
+            transform: translateX(100%);
+
+            &.open {
+                display: flex;
+                transform: translateX(0%);
+
+                .nav__toggle-close {
+                    display: block;
+                }
+            }
+
+            &--mobile {
+                min-height: 100vh;
+                justify-content: flex-start;
+            }
 
             .navbar-collapse {
                 flex-direction: column;
                 align-items: stretch;
                 width: 100%;
-
-                &.collapse:not(.show) {
-                    display: none;
-                }
             }
 
-            .navbar-nav {
+            & .navbar-nav {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0;
@@ -330,9 +403,6 @@ header {
     }
 }
 
-// Logo Component - BEM
-// ====================
-
 .logo {
 
     // Block: .logo
@@ -351,7 +421,7 @@ header {
 
     // Modifier: .logo--small
     &--small {
-        .logo__link {
+        .checkbox__link link {
             font-size: 1.25rem;
         }
     }
@@ -364,12 +434,10 @@ header {
     }
 }
 
-// Responsive Breakpoints
-// ======================
-
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .nav {
         &--mobile {
+
             .nav__toggle {
                 display: block;
             }
@@ -377,7 +445,7 @@ header {
             .nav__menu {
                 position: absolute;
                 top: 100%;
-                left: 0;
+                left: unset;
                 right: 0;
                 background-color: #fff;
                 border-top: 1px solid #e9ecef;
@@ -386,7 +454,39 @@ header {
                 align-items: stretch;
                 padding: 1rem;
                 gap: 1rem;
+                max-width: 260px;
             }
         }
     }
+}
+
+@media (max-width: 400px) {
+    .nav {
+        &--mobile {
+            .nav__menu {
+                max-width: none;
+            }
+        }
+    }
+
+    .nav--mobile .nav__toggle-close {
+        left: unset;
+        right: 50px;
+    }
+
+    .nav--mobile .nav__menu .navbar-nav {
+        text-align: center;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: $color-5;
+    color: $color-4;
 }

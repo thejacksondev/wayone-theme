@@ -33,7 +33,7 @@ if (!function_exists('future_items')) {
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="future-header">
+                <div class="future-header" data-aos="fade-down">
                     <h3 class="bg-red">Meet Wayone</h3>
                     <h2>The Future Of Ad Creatives</h2>
                     <p>Automate your entire ad creative workflow with Wayone</p>
@@ -42,8 +42,8 @@ if (!function_exists('future_items')) {
         </div>
     </div>
     <div class="future-items">
-        <?php foreach (future_items() as $item) : ?>
-            <div class="future-item">
+        <?php foreach (future_items() as $index => $item) : ?>
+            <div class="future-item" data-aos="fade-up" data-aos-delay="<?php echo $index * 200; ?>">
                 <div class="future-item__image">
                     <?php get_template_part('assets/svg/future/' . $item['svg']); ?>
                 </div>

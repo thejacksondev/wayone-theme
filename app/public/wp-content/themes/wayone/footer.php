@@ -4,36 +4,36 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
         <h3>Product</h3>
         <ul>
-          <li><a href="#">Wayone Overview</a></li>
-          <li><a href="#">Wayone Code</a></li>
-          <li><a href="#">Wayone Pricing Plans</a></li>
-          <li><a href="#">Wayone.ai login</a></li>
+          <li><a href="#4-section">Wayone Overview</a></li>
+          <li><a href="#4-section">Wayone Code</a></li>
+          <li><a href="#4-section">Wayone Pricing Plans</a></li>
+          <li><a href="#4-section">Wayone.ai login</a></li>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <h3>API Platform</h3>
         <ul>
-          <li><a href="#">API Overview</a></li>
-          <li><a href="#">Developer Docs</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Console Login</a></li>
+          <li><a href="#4-section">API Overview</a></li>
+          <li><a href="#4-section">Developer Docs</a></li>
+          <li><a href="#4-section">Pricing</a></li>
+          <li><a href="#4-section">Console Login</a></li>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <h3>Get Support</h3>
         <ul>
-          <li><a href="#">Contact Support</a></li>
-          <li><a href="#">FAQs &amp; Help Center</a></li>
-          <li><a href="#">Customer Success</a></li>
-          <li><a href="#">Hire a professional partner</a></li>
+          <li><a href="#4-section">Contact Support</a></li>
+          <li><a href="#4-section">FAQs &amp; Help Center</a></li>
+          <li><a href="#4-section">Customer Success</a></li>
+          <li><a href="#4-section">Hire a professional partner</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <h3>Terms and Policies</h3>
         <ul>
-          <li><a href="#">Privacy choices</a></li>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms of service - consumer</a></li>
-          <li><a href="#">Terms of service - commercial</a></li>
-          <li><a href="#">Usage policy</a></li>
+          <li><a href="#4-section">Privacy choices</a></li>
+          <li><a href="#4-section">Privacy policy</a></li>
+          <li><a href="#4-section">Terms of service - consumer</a></li>
+          <li><a href="#4-section">Terms of service - commercial</a></li>
+          <li><a href="#4-section">Usage policy</a></li>
         </ul>
       </div>
     </div>
@@ -44,7 +44,7 @@
       <div class="col-xs-12 col-sm-12">
         <ul class="footer-social-links">
           <li>
-            <a href="#">
+            <a href="#4-section">
               <svg style="max-width: 24px;" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve" fill="#000000" stroke="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -55,7 +55,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#4-section">
               <svg style="max-width: 22px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -68,7 +68,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#4-section">
               <svg style="max-width: 19px;" fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -80,7 +80,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#4-section">
               <svg style="max-width: 25px;" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" stroke="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -107,7 +107,7 @@
           <span class="separator">|</span>
           <span class="recaptcha">This Site Is Protected By Recaptcha Enterprise.</span>
           <span class="separator">|</span>
-          <span class="privacy">The Google <a href="#">Privacy Policy</a> And <a href="#">Terms Of Service</a> Apply.</span>
+          <span class="privacy">The Google <a href="#4-section">Privacy Policy</a> And <a href="#4-section">Terms Of Service</a> Apply.</span>
         </p>
       </div>
     </div>

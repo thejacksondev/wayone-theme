@@ -16,6 +16,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden !important;
 }
 
 .container {
@@ -765,6 +766,7 @@ a.button:active,
   background-color: rgba(235, 235, 235, 0.23);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0784313725);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 @media (max-width: 1600px) {
   .faq .faq-list {
@@ -893,7 +895,7 @@ a.button:active,
 }
 
 header {
-  z-index: 1000;
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -906,11 +908,18 @@ header {
   background-color: transparent;
   padding: 1.3rem 0 1em;
   position: relative;
-  z-index: 1000;
+  z-index: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+.nav--mobile {
+  padding: 0;
+  z-index: 1000;
 }
 .nav__container {
   min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav .container {
   max-width: 1909px;
@@ -939,6 +948,13 @@ header {
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin: 0 0 0 auto;
+  padding: 15px;
+}
+@media (max-width: 992px) {
+  .nav__toggle {
+    display: block;
+  }
 }
 .nav__toggle:hover {
   background-color: #f8f9fa;
@@ -965,6 +981,7 @@ header {
   background-color: #333;
   position: relative;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .nav__toggle-icon::before, .nav__toggle-icon::after {
   content: "";
@@ -972,6 +989,7 @@ header {
   width: 100%;
   height: 2px;
   background-color: #333;
+  left: 0;
   transition: all 0.3s ease;
 }
 .nav__toggle-icon::before {
@@ -992,8 +1010,16 @@ header {
     gap: 10px;
   }
 }
+.nav__menu--mobile {
+  display: none;
+}
 @media (max-width: 992px) {
-  .nav__menu {
+  .nav__menu--mobile {
+    display: flex;
+  }
+}
+@media (max-width: 992px) {
+  .nav__menu--desktop {
     display: none;
   }
 }
@@ -1094,10 +1120,41 @@ header {
 .nav--mobile .nav__toggle {
   display: block;
 }
+.nav--mobile .nav__toggle-close {
+  position: absolute;
+  top: 30px;
+  left: 210px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+.nav--mobile .nav__toggle-close::before, .nav--mobile .nav__toggle-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: transform 0.3s ease;
+}
+.nav--mobile .nav__toggle-close::before {
+  transform: rotate(45deg);
+}
+.nav--mobile .nav__toggle-close::after {
+  transform: rotate(-45deg);
+}
+.nav--mobile .nav__toggle-close:hover::before, .nav--mobile .nav__toggle-close:hover::after {
+  background-color: #81d6a4;
+}
 .nav--mobile .nav__menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: unset;
   right: 0;
   background-color: #fff;
   border-top: 1px solid #e9ecef;
@@ -1106,14 +1163,24 @@ header {
   align-items: stretch;
   padding: 1rem;
   gap: 1rem;
+  transition: all 0.3s ease;
+  transform: translateX(100%);
+}
+.nav--mobile .nav__menu.open {
+  display: flex;
+  transform: translateX(0%);
+}
+.nav--mobile .nav__menu.open .nav__toggle-close {
+  display: block;
+}
+.nav--mobile .nav__menu--mobile {
+  min-height: 100vh;
+  justify-content: flex-start;
 }
 .nav--mobile .nav__menu .navbar-collapse {
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-}
-.nav--mobile .nav__menu .navbar-collapse.collapse:not(.show) {
-  display: none;
 }
 .nav--mobile .nav__menu .navbar-nav {
   flex-direction: column;
@@ -1164,21 +1231,21 @@ header {
 .logo__link:hover {
   color: #81d6a4;
 }
-.logo--small .logo__link {
+.logo--small .checkbox__link link {
   font-size: 1.25rem;
 }
 .logo--large .logo__link {
   font-size: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .nav--mobile .nav__toggle {
     display: block;
   }
   .nav--mobile .nav__menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: unset;
     right: 0;
     background-color: #fff;
     border-top: 1px solid #e9ecef;
@@ -1187,8 +1254,32 @@ header {
     align-items: stretch;
     padding: 1rem;
     gap: 1rem;
+    max-width: 260px;
   }
 }
+@media (max-width: 400px) {
+  .nav--mobile .nav__menu {
+    max-width: none;
+  }
+  .nav--mobile .nav__toggle-close {
+    left: unset;
+    right: 50px;
+  }
+  .nav--mobile .nav__menu .navbar-nav {
+    text-align: center;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
 .footer {
   background-color: #151515;
   color: #FFFFFF;

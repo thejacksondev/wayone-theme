@@ -31,6 +31,9 @@ function wayone_enqueue_scripts()
     null,
     true // load in footer
   );
+  wp_register_script('aos', get_template_directory_uri() . '/assets/js/aos.js', array('jquery'), null, true);
+  wp_enqueue_style('aos', get_template_directory_uri() . '/assets/css/aos.css');
+  wp_enqueue_script('aos');
 }
 add_action('wp_enqueue_scripts', 'wayone_enqueue_scripts');
 

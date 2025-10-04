@@ -8,7 +8,7 @@
 </head>
 
 <body <?php body_class('wayone'); ?>>
+  <?php get_template_part('sections/global/mobile-nav'); ?>
   <header class="site-header" role="banner">
     <?php get_template_part('sections/global/nav'); ?>
-
   </header>
